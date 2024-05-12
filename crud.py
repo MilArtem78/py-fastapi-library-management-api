@@ -14,7 +14,7 @@ def create_author(
     return db_author
 
 
-def get_author(db: Session, author_id: int) -> models.DBAuthor:
+def get_author(db: Session, author_id: int) -> models.DBAuthor | None:
     return db.query(models.DBAuthor).filter(
         models.DBAuthor.id == author_id
     ).first()
@@ -40,7 +40,7 @@ def create_book(
     return db_book
 
 
-def get_book(db: Session, book_id: int) -> models.DBBook:
+def get_book(db: Session, book_id: int) -> models.DBBook | None:
     return db.query(models.DBBook).filter(
         models.DBBook.id == book_id
     ).first()
